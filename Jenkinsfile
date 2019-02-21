@@ -9,9 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        build 'Build', parameters: [
-          string(name: 'BRANCH', value: String.valueOf(BRANCH))
-        ]
+        build job: 'Build', parameters: [string(name: 'BRANCH', value: String.valueOf(BRANCH))]
       }
     }
     stage('Package') {
